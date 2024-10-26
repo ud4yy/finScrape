@@ -88,3 +88,38 @@ https://finscrape-supa.onrender.com/swagger-ui/index.html#/scrape-controller/get
 
 ## Sample Data
 Sample PDFs and other resources are available in this [Google Drive folder](https://drive.google.com/drive/folders/1ATk01J0cNIAE8fjzwS5ms4TmENvhWlEQ?usp=sharing)
+
+## How to Setup Locally
+
+To get started with a local setup, follow these steps:
+
+1. **Clone the Repository**
+   ```bash
+   git clone <repository_url>
+   ```
+
+2. **Navigate to the Project Directory**
+   ```bash
+   cd finScrape/backend
+   ```
+
+3. **Database Configuration**
+
+   The Supabase database configuration is pre-configured in the project files. A dummy Supabase database URL has been included in the configuration files, allowing for testing purposes without requiring additional setup.
+
+4. **Build and Run the Application**
+
+   Since `pom.xml` already includes all necessary dependencies, you can simply build and run the application with Maven:
+
+   ```bash
+   mvn clean install
+   mvn spring-boot:run
+   ```
+
+5. **Access the Application**
+
+   Once the server is running, you can access the API locally at:
+   ```
+   http://localhost:8080/swagger-ui/index.html
+   ```
+   This link will open Swagger UI to interact with the API.
