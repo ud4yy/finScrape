@@ -45,7 +45,7 @@ public class ScrapeController {
         }
     }
 
-    @PostMapping("/forex-data")
+    @GetMapping("/forex-data")
     public ResponseEntity<ForexDataResponse> getForexData(
             @RequestParam String from,
             @RequestParam String to,
