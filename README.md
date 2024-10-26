@@ -1,6 +1,8 @@
 # Forex Data Scraper & API
 
-A robust Spring Boot application that scrapes historical exchange rate data from Yahoo Finance and provides REST APIs to query the data. This project is deployed on Render's free tier service, which may experience initial delay during cold starts and reset persistent files when inactive. Please follow the demo steps given in the demo section for optimal testing.
+A robust Spring Boot application that scrapes historical exchange rate data from Yahoo Finance and provides REST APIs to query the data.
+
+**This project is deployed on Render's free tier service, which may experience initial delay during cold starts and reset persistent files when inactive. Please follow the demo steps given in the demo section for optimal testing.**
 
 ## Tech Stack
 - Spring Boot
