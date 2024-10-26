@@ -95,7 +95,7 @@ To get started with a local setup, follow these steps:
 
 1. **Clone the Repository**
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/ud4yy/finScrape.git
    ```
 
 2. **Navigate to the Project Directory**
