@@ -84,6 +84,10 @@
 			<artifactId>itextpdf</artifactId>
 			<version>5.5.13.2</version>
 		</dependency>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>com.github.librepdf</groupId>
