@@ -10,5 +10,5 @@ import java.util.List;
 
 @Repository
 public interface WeeklyExchangeRateRepository extends JpaRepository<WeeklyExchangeRate, Long> {
-    List<WeeklyExchangeRate> findByCurrencyPairAndWeekStartBetween(CurrencyPair currencyPair, LocalDate start, LocalDate end);
+    List<WeeklyExchangeRate> findByCurrencyPairAndWeekStartBetween(CurrencyPair currencyPair, LocalDate startDate, LocalDate endDate);
 }

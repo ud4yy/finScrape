@@ -10,5 +10,5 @@ import java.util.List;
 
 @Repository
 public interface ExchangeRateRepository extends JpaRepository<ExchangeRate, Long> {
+    List<ExchangeRate> findByCurrencyPairAndDateBetween(CurrencyPair currencyPair, LocalDate startDate, LocalDate endDate);
 }
-

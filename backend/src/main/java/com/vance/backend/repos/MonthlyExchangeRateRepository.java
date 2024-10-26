@@ -11,7 +11,5 @@ import java.util.List;
 
 @Repository
 public interface MonthlyExchangeRateRepository extends JpaRepository<MonthlyExchangeRate, Long> {
-    List<MonthlyExchangeRate> findByCurrencyPairAndMonthStartBetween(
-        CurrencyPair currencyPair, LocalDate startDate, LocalDate endDate
-    );
+    List<MonthlyExchangeRate> findByCurrencyPairAndMonthStartBetween(CurrencyPair currencyPair, LocalDate startDate, LocalDate endDate);
 }

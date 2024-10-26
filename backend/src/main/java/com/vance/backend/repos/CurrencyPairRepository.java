@@ -2,6 +2,7 @@ package com.vance.backend.repos;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.Optional;
 
 import com.vance.backend.models.CurrencyPair;
 
