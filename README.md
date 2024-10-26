@@ -26,7 +26,7 @@ This multi-table approach allows for:
 - Efficient querying based on different time periods
 - Reduced data redundancy
 - Optimized storage of aggregated data
-- Fast retrieval through indexed time-based queries
+- Fast retrieval through **indexed** time-based queries
 
 ## Key Features
 
