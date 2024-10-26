@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.vance.backend.dto.ForexDataResponse;
+import com.vance.backend.services.ForexPdfService;
 import com.vance.backend.services.ForexService;
 import com.vance.backend.services.scrappers.interfaces.DataPopulation;
 import org.slf4j.Logger;
@@ -22,7 +23,9 @@ public class ScrapeController {
     private DataPopulation populationService;
     @Autowired
     private ForexService forexService;
-    
+    @Autowired
+    private ForexPdfService forexPdfService;
+
     @PostMapping("/populate")
     public ResponseEntity<String> populateHistoricalData(
             @RequestParam String fromCurrency,
@@ -55,6 +58,24 @@ public class ScrapeController {
             return ResponseEntity.badRequest().build();
         } catch (Exception e) {
             logger.error("Error fetching forex data: {}", e.getMessage());
+            return ResponseEntity.internalServerError().build();
+        }
+    }
+    // Add this endpoint to your existing ScrapeController
+    @GetMapping("/forex-pdf")
+    public ResponseEntity<byte[]> downloadForexPdf(
+            @RequestParam String fromCurrency,
+            @RequestParam String toCurrency) {
+        try {
+            byte[] pdfBytes = forexPdfService.generateForexReport(fromCurrency, toCurrency);
+            
+            return ResponseEntity.ok()
+                    .header("Content-Type", "application/pdf")
+                    .header("Content-Disposition", 
+                        "attachment; filename=\"" + fromCurrency + "_" + toCurrency + "_report.pdf\"")
+                    .body(pdfBytes);
+        } catch (Exception e) {
+            logger.error("Error generating PDF report: {}", e.getMessage());
             return ResponseEntity.internalServerError().build();
         }
     }

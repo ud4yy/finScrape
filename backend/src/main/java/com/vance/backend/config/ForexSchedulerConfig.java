@@ -73,7 +73,6 @@ public class ForexSchedulerConfig {
         }
     }
     
-    // Run monthly on 1st day at 00:30 AM
     @Scheduled(cron = "0 30 0 1 * *")
     public void scheduleMonthlyScraping() {
         log.info("Starting monthly forex data scraping at {}", LocalDateTime.now());
