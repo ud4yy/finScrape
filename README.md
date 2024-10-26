@@ -1,15 +1,22 @@
+
 # finScrape
 
 A robust Spring Boot application that scrapes historical exchange rate data from Yahoo Finance and provides REST APIs to query the data.
 
-**This project is deployed on Render's free tier service, which may experience initial delay during cold starts and reset persistent files when inactive. Please follow the demo steps given in the demo section for optimal testing.**
+**Deployment Information:**  
+There are two deployments made for this project:
+1. One employs an H2 database.
+2. The other uses a PostgreSQL-based database hosted on Supabase.
 
+Please check out the `deploy2Supa` branch for implementation details and further information.
 
-- Note: APIs can also be interacted with Swagger UI, check **DEMO** section for more
+**This project is deployed on Render's free tier service, which may experience initial delays during cold starts and reset persistent files when inactive. Please follow the demo steps given in the demo section for optimal testing.**
+
+- Note: APIs can also be interacted with via Swagger UI; check the **DEMO** section for more information.
 
 ## Tech Stack
 - Spring Boot
-- H2 Database
+- H2 Database / PostgreSQL (Supabase)
 - Render (Deployment)
 - GitHub
 - Postman
@@ -40,11 +47,9 @@ The application scrapes forex data from Yahoo Finance using their historical dat
 The application maintains data synchronization through three scheduled scraping jobs for AED-INR and GBP-INR pairs:
 - Daily: Updates daily exchange rates at 00:05
 - Weekly: Aggregates and updates weekly data every Monday at 00:15  
-- Monthly: Aggregates and updates monthly data on 1st of every month at 00:30 
+- Monthly: Aggregates and updates monthly data on the 1st of every month at 00:30 
 
-Each scheduled job includes retry mechanism with exponential backoff (3 attempts, starting with 5-second delay) to ensure reliable data collection. You can check the implementation details [click here](https://github.com/ud4yy/finScrape/blob/main/backend/src/main/java/com/vance/backend/config/ForexSchedulerConfig.java).
-
-[Rest of the sections remain the same...]
+Each scheduled job includes a retry mechanism with exponential backoff (3 attempts, starting with a 5-second delay) to ensure reliable data collection. You can check the implementation details [here](https://github.com/ud4yy/finScrape/blob/main/backend/src/main/java/com/vance/backend/config/ForexSchedulerConfig.java).
 
 ### 3. REST API Response
 The API returns comprehensive forex data including:
