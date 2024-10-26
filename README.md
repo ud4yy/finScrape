@@ -31,8 +31,6 @@ The application scrapes forex data from Yahoo Finance using their historical dat
 
 # Forex Data Scraper & API
 
-[Previous sections remain the same...]
-
 ### 2. Scheduled Synchronization
 The application maintains data synchronization through three scheduled scraping jobs for AED-INR and GBP-INR pairs:
 - Daily: Updates daily exchange rates at 00:05
