@@ -57,7 +57,7 @@ The API returns comprehensive forex data including:
   - Maximum Price
   - Minimum Price
   - Average Price
-- Time Series Data:
+
   - Daily exchange rates
   - Weekly aggregated data
   - Monthly aggregated data
@@ -101,3 +101,37 @@ Generates a PDF report containing monthly exchange rate analysis.
 
 ## Sample Data
 Sample PDFs and other resources are available in this [Google Drive folder](https://drive.google.com/drive/folders/1ATk01J0cNIAE8fjzwS5ms4TmENvhWlEQ?usp=sharing)
+
+
+## How to Setup Locally
+
+To get started with a local setup, follow these steps:
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/ud4yy/finScrape.git
+   ```
+
+2. **Navigate to the Project Directory**
+   ```bash
+   cd finScrape/backend
+   ```
+
+3. **Build and Run the Application**
+
+   Since `pom.xml` already includes all necessary dependencies, you can simply build and run the application with Maven:
+
+   ```bash
+   mvn clean install
+   mvn spring-boot:run
+   ```
+
+4. **Access the Application**
+
+   Once the server is running, you can access the API locally at:
+   ```
+   http://localhost:8080/swagger-ui/index.html
+   ```
+   This link will open Swagger UI to interact with the API.
+
+
