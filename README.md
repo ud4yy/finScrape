@@ -1,4 +1,4 @@
-# Forex Data Scraper & API
+# finScrape
 
 A robust Spring Boot application that scrapes historical exchange rate data from Yahoo Finance and provides REST APIs to query the data.
 
