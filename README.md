@@ -10,7 +10,7 @@ A robust Spring Boot application that scrapes historical exchange rate data from
 - Postman
 
 ## Database Design
-![ER Diagram](https://drive.google.com/file/d/1hx9nyB9AfAWkUPcBw3upmYLifn9kGIc1/view?usp=sharing)
+<img src="https://drive.google.com/uc?id=1hx9nyB9AfAWkUPcBw3upmYLifn9kGIc1" alt="ER Diagram" style="max-width: 100%; height: auto;">
 
 The database is designed with scalability and performance in mind:
 - **CurrencyPair**: Central entity storing currency pairs (e.g., USD-INR)
