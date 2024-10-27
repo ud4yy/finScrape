@@ -70,19 +70,19 @@ https://finscrape-supa.onrender.com/swagger-ui/index.html#/scrape-controller/get
 
 1. **Initialize Database (Optional)**
    ```
-   https://finscrape-supa.onrender.com/api/populate?fromCurrency=AED&toCurrency=INR&startDate=2023-01-01&endDate=2024-10-26
+   https://finscrape-supa.onrender.com/api/populate?fromCurrency=GBP&toCurrency=USD&startDate=2023-01-01&endDate=2024-10-26
    ```
    The `populate` endpoint allows for initial data population if needed. Since this deployment uses Supabase as a persistent PostgreSQL database, data remains intact across server restarts, eliminating the need to reinitialize each time the server restarts. Scheduled scraping will automatically keep the data updated.
 
 2. **Query Historical Data**
    ```
-   https://finscrape-supa.onrender.com/api/forex-data?from=USD&to=INR&period=3M
+   https://finscrape-supa.onrender.com/api/forex-data?from=GBP&to=USD&period=3M
    ```
    Returns exchange rate data with aggregate statistics and time series data for the specified period.
 
 3. **Generate Monthly PDF Reports**
    ```
-   https://finscrape-supa.onrender.com/api/forex-pdf?fromCurrency=AED&toCurrency=INR
+   https://finscrape-supa.onrender.com/api/forex-pdf?fromCurrency=GBP&toCurrency=USD
    ```
    Generates a PDF report containing monthly exchange rate analysis.
 
