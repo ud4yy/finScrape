@@ -16,7 +16,7 @@ Please check out the `deploy2Supa` branch for implementation details and further
 
 ## Tech Stack
 - Spring Boot
-- H2 Database / PostgreSQL (Supabase)
+- H2 Database / PostgreSQL (Supabase ```deplo2Supa``` branch) 
 - Render (Deployment)
 - GitHub
 - Postman
