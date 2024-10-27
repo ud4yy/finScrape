@@ -61,7 +61,7 @@ public class ForexSchedulerConfig {
         log.info("Starting weekly forex data scraping at {}", LocalDateTime.now());
         
         LocalDate endDate = LocalDate.now();
-        LocalDate startDate = endDate.minusWeeks(2); 
+        LocalDate startDate = endDate.minusWeeks(1); 
         
         for (String fromCurrency : FROM_CURRENCIES) {
             scrapeWeeklyDataWithRetry(
@@ -78,7 +78,7 @@ public class ForexSchedulerConfig {
         log.info("Starting monthly forex data scraping at {}", LocalDateTime.now());
         
         LocalDate endDate = LocalDate.now();
-        LocalDate startDate = endDate.minusMonths(2); 
+        LocalDate startDate = endDate.minusMonths(1); 
         
         for (String fromCurrency : FROM_CURRENCIES) {
             scrapeMonthlyDataWithRetry(
