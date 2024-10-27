@@ -102,7 +102,7 @@ public class ForexSchedulerConfig {
             log.info("Successfully scraped daily data for {}-{}", fromCurrency, toCurrency);
         } catch (Exception e) {
             log.error("Error scraping daily data for {}-{}: {}", fromCurrency, toCurrency, e.getMessage());
-            throw e; // Rethrow for retry mechanism
+            throw e; 
         }
     }
     
@@ -118,7 +118,7 @@ public class ForexSchedulerConfig {
             log.info("Successfully scraped weekly data for {}-{}", fromCurrency, toCurrency);
         } catch (Exception e) {
             log.error("Error scraping weekly data for {}-{}: {}", fromCurrency, toCurrency, e.getMessage());
-            throw e; // Rethrow for retry mechanism
+            throw e;
         }
     }
     

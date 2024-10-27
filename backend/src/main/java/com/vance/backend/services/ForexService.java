@@ -38,12 +38,10 @@ public class ForexService {
         LocalDate endDate = LocalDate.now();
         LocalDate startDate = calculateStartDate(endDate, period);
         
-        // Fetch all types of data points
         List<ForexDataPoint> dailyData = fetchDailyData(currencyPair, startDate, endDate);
         List<ForexDataPoint> weeklyData = fetchWeeklyData(currencyPair, startDate, endDate);
         List<ForexDataPoint> monthlyData = fetchMonthlyData(currencyPair, startDate, endDate);
         
-        // Calculate aggregates from daily data for more accurate statistics
         AggregateStatistics aggregates = calculateAggregates(dailyData);
         
         return new ForexDataResponse(
@@ -123,19 +121,16 @@ public class ForexService {
     
     private List<ForexDataPoint> fetchDataPoints(CurrencyPair currencyPair, LocalDate startDate, LocalDate endDate, String period) {
         if (period.endsWith("D") || period.equals("1M")) {
-            // Use daily data for periods up to 1 month
             return exchangeRateRepository.findByCurrencyPairAndDateBetween(currencyPair, startDate, endDate)
                 .stream()
                 .map(this::mapToDataPoint)
                 .collect(Collectors.toList());
         } else if (period.endsWith("M") && Integer.parseInt(period.substring(0, period.length() - 1)) <= 6) {
-            // Use weekly data for periods up to 6 months
             return weeklyExchangeRateRepository.findByCurrencyPairAndWeekStartBetween(currencyPair, startDate, endDate)
                 .stream()
                 .map(this::mapToDataPoint)
                 .collect(Collectors.toList());
         } else {
-            // Use monthly data for longer periods
             return monthlyExchangeRateRepository.findByCurrencyPairAndMonthStartBetween(currencyPair, startDate, endDate)
                 .stream()
                 .map(this::mapToDataPoint)

@@ -23,7 +23,7 @@ import java.util.stream.Stream;
 public class ForexPdfService {
 
     private final ExchangeRateRepository exchangeRateRepository;
-    private final CurrencyPairRepository currencyPairRepository; // Add this line
+    private final CurrencyPairRepository currencyPairRepository; 
 
     public List<ExchangeRate> getLast30DaysExchangeRates(CurrencyPair currencyPair) {
         LocalDate endDate = LocalDate.now();
@@ -66,7 +66,6 @@ public class ForexPdfService {
         Paragraph title = new Paragraph();
         title.setAlignment(Element.ALIGN_CENTER);
 
-        // Add title
         Font titleFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 24);
         title.add(new Chunk("Forex Exchange Rate Report", titleFont));
         title.add(Chunk.NEWLINE);
@@ -88,13 +87,11 @@ public class ForexPdfService {
     }
 
     private void addContent(Document document, List<ExchangeRate> exchangeRates) throws DocumentException {
-        // Ensure exchangeRates is not null or empty
         if (exchangeRates == null || exchangeRates.isEmpty()) {
             document.add(new Paragraph("No data available for the selected currencies."));
             return;
         }
 
-        // Add table
         PdfPTable table = new PdfPTable(5); // Date, Open, High, Low, Close
         table.setWidthPercentage(100);
         
