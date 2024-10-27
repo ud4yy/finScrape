@@ -38,12 +38,10 @@ public class ForexService {
         LocalDate endDate = LocalDate.now();
         LocalDate startDate = calculateStartDate(endDate, period);
         
-        // Fetch all types of data points
         List<ForexDataPoint> dailyData = fetchDailyData(currencyPair, startDate, endDate);
         List<ForexDataPoint> weeklyData = fetchWeeklyData(currencyPair, startDate, endDate);
         List<ForexDataPoint> monthlyData = fetchMonthlyData(currencyPair, startDate, endDate);
         
-        // Calculate aggregates from daily data for more accurate statistics
         AggregateStatistics aggregates = calculateAggregates(dailyData);
         
         return new ForexDataResponse(

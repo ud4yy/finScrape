@@ -23,7 +23,7 @@ import java.util.stream.Stream;
 public class ForexPdfService {
 
     private final ExchangeRateRepository exchangeRateRepository;
-    private final CurrencyPairRepository currencyPairRepository; // Add this line
+    private final CurrencyPairRepository currencyPairRepository; 
 
     public List<ExchangeRate> getLast30DaysExchangeRates(CurrencyPair currencyPair) {
         LocalDate endDate = LocalDate.now();
@@ -88,7 +88,6 @@ public class ForexPdfService {
     }
 
     private void addContent(Document document, List<ExchangeRate> exchangeRates) throws DocumentException {
-        // Ensure exchangeRates is not null or empty
         if (exchangeRates == null || exchangeRates.isEmpty()) {
             document.add(new Paragraph("No data available for the selected currencies."));
             return;

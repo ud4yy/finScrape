@@ -61,7 +61,6 @@ public class ScrapeController {
             return ResponseEntity.internalServerError().build();
         }
     }
-    // Add this endpoint to your existing ScrapeController
     @GetMapping("/forex-pdf")
     public ResponseEntity<byte[]> downloadForexPdf(
             @RequestParam String fromCurrency,
